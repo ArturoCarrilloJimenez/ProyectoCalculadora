@@ -56,7 +56,7 @@ public class PruebaCalculadora {
             }
         });
         frame.getContentPane().add(buttonSumar);
-        
+
         buttonRestar = new JButton("-");
         buttonRestar.addActionListener(new ActionListener() {
             @Override
@@ -68,7 +68,7 @@ public class PruebaCalculadora {
             }
         });
         frame.getContentPane().add(buttonRestar);
-        
+
         buttonMultiplicar = new JButton("*");
         buttonMultiplicar.addActionListener(new ActionListener() {
             @Override
