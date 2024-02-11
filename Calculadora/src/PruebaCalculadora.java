@@ -10,6 +10,8 @@ public class PruebaCalculadora {
     private JLabel labelResultado;
     private JButton buttonSumar;
     private JButton buttonRestar;
+    private JButton buttonMultiplicar;
+    private JButton buttonDividir;
     private JButton buttonClear;
     private Calculadora calculadora;
 
@@ -54,7 +56,7 @@ public class PruebaCalculadora {
             }
         });
         frame.getContentPane().add(buttonSumar);
-
+        
         buttonRestar = new JButton("-");
         buttonRestar.addActionListener(new ActionListener() {
             @Override
@@ -66,7 +68,34 @@ public class PruebaCalculadora {
             }
         });
         frame.getContentPane().add(buttonRestar);
-
+        
+        buttonMultiplicar = new JButton("*");
+        buttonMultiplicar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int num1 = Integer.parseInt(textField1.getText());
+                int num2 = Integer.parseInt(textField2.getText());
+                int resultado = calculadora.multiplicar(num1, num2);
+                labelResultado.setText("Resultado: " + resultado);
+            }
+        });
+        frame.getContentPane().add(buttonMultiplicar);
+        
+        buttonDividir = new JButton("/");
+        buttonDividir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    int num1 = Integer.parseInt(textField1.getText());
+                    int num2 = Integer.parseInt(textField2.getText());
+                    double resultado = calculadora.dividir(num1, num2);
+                    labelResultado.setText("Resultado: " + resultado);
+                } catch (ArithmeticException ex) {
+                    labelResultado.setText("Error: " + ex.getMessage());
+                }
+            }
+        });
+        frame.getContentPane().add(buttonDividir);
         buttonClear = new JButton("Clear");
         buttonClear.addActionListener(new ActionListener() {
             @Override
