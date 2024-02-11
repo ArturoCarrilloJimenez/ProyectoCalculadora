@@ -9,6 +9,7 @@ public class PruebaCalculadora {
     private JTextField textField2;
     private JLabel labelResultado;
     private JButton buttonSumar;
+    private JButton buttonMultiplicar;
     private JButton buttonClear;
     private Calculadora calculadora;
 
@@ -53,6 +54,18 @@ public class PruebaCalculadora {
             }
         });
         frame.getContentPane().add(buttonSumar);
+
+        buttonMultiplicar = new JButton("*");
+        buttonMultiplicar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int num1 = Integer.parseInt(textField1.getText());
+                int num2 = Integer.parseInt(textField2.getText());
+                int resultado = calculadora.multiplicar(num1, num2);
+                labelResultado.setText("Resultado: " + resultado);
+            }
+        });
+        frame.getContentPane().add(buttonMultiplicar);
 
         buttonClear = new JButton("Clear");
         buttonClear.addActionListener(new ActionListener() {
