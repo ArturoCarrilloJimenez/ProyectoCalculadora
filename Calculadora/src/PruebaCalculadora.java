@@ -55,6 +55,7 @@ public class PruebaCalculadora {
         });
         frame.getContentPane().add(buttonSumar);
 
+        
         buttonMultiplicar = new JButton("*");
         buttonMultiplicar.addActionListener(new ActionListener() {
             @Override
